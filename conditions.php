@@ -36,9 +36,9 @@ date_default_timezone_set('Europe/Paris');
 $now = date("H"); 
 echo "<br>The time is " . date("h:i:sa");
 
-  if ($now >= "5" and $now <= "9" ) {echo " Good morning";} 
+  if ($now >= "5" and $now <= "9" ) {echo " Good morning!!!";} 
   if ($now > "9" and $now <= "12") {echo " Good day";} 
-  if ($now > "12" and $now <= "16") {echo " Good afternoon";} 
+  if ($now > "12" and $now <= "16") {echo " Good afternoon!";} 
   if ($now > "16" and $now <= "21") {echo " Good evening";} 
   if ($now > "21" or $now < "5") {echo " Good night";} 
     
