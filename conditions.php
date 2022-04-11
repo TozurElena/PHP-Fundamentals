@@ -41,4 +41,20 @@ echo "<br>The time is " . date("h:i:sa");
   if ($now > "12" and $now <= "16") {echo " Good afternoon!";} 
   if ($now > "16" and $now <= "21") {echo " Good evening";} 
   if ($now > "21" or $now < "5") {echo " Good night";} 
-    
+?>
+<!-- 3. "Different greetings according to age" Exercise -->
+
+<form method="get" action="">
+	<label for="age">Please type your age: </label>
+	<input type="" name="age">
+	<input type="submit" name="submit" value="Greet me now">
+</form>
+<?php
+if (isset($_GET['age'])){
+	if ($_GET['age'] < 12 ) {echo "<br>Hello kiddo!";}
+		elseif ($_GET['age'] < 18 ) {echo "<br>Hello Teenager !";}
+				elseif ($_GET['age'] < 115) {echo "<br> Hello Adult ! ";}
+				else {echo "Wow! Still alive ? Are you a robot, like me ? Can I hug you ?";}
+	
+}
+?>
