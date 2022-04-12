@@ -78,7 +78,7 @@ if (isset($_GET['age'], $_GET['gender'], $_GET['lang'])){
 	else if (($_GET['gender']) == "man")	echo $strLang." boy!"; else echo $strLang." Girl!";
 }
 ?>
-<!-- 6. The Girl Soccer team -->
+<!-- 6. 7 The Girl Soccer team -->
 <h1>The Girl Soccer team</h1>
 <form method="get" action="">
 	<label for="age">Please, type your age: </label>
@@ -96,8 +96,9 @@ if (isset($_GET['age'], $_GET['gender'], $_GET['lang'])){
 </form>
 <?php
 	if (isset($_GET['age'], $_GET['gender'], $_GET['namePers'])) {
+		$answer = "Sorry, ".$_GET['namePers']." you don't fit the criteria";
 		if ($_GET['gender'] == 'woman' and ($_GET['age'] >= 21 and $_GET['age'] <= 40)) {
-			echo $_GET['namePers'].",welcome to the team !";}
-			else {echo "Sorry, ".$_GET['namePers']." you don't fit the criteria";}
+			$answer = $_GET['namePers'].",welcome to the team !";}
+		echo $answer;
 	}
 ?>
