@@ -42,7 +42,7 @@ echo "<br>The time is " . date("h:i:sa");
   if ($now > "16" and $now <= "21") {echo " Good evening";} 
   if ($now > "21" or $now < "5") {echo " Good night";} 
 ?>
-<!-- 3.4 "Different greetings according to age and gender" Exercise -->
+<!-- 3, 4, 5 "Different greetings according to age and gender, langage" Exercise -->
 
 <form method="get" action="">
 	<label for="age">Please type your age: </label>
@@ -54,19 +54,27 @@ echo "<br>The time is " . date("h:i:sa");
 	<label >
 	<input type="radio" name="gender" value="woman">Woman
 	</label> <br>
+	<label for="lang"><br>Do you speak English?<br></label>
+	<label >
+	<input type="radio" name="lang" value="yes">Yes
+	</label> 
+	<label >
+	<input type="radio" name="lang" value="no">No
+	</label> <br>
 
 	<input type="submit" name="submit" value="Greet me now">
 </form>
 <?php
-if (isset($_GET['age'], $_GET['gender'])){
+if (isset($_GET['age'], $_GET['gender'], $_GET['lang'])){
 	$str='';
-	if (($_GET['gender']) == "man") {$str = "<br>Hello Mister ";} else {$str = "<br>Hello Miss ";}
-	if ($_GET['age'] < 12 )  {
-		{echo $str." kiddo!";} 
-		}
-		elseif ($_GET['age'] < 18 ) {echo $str." Teenager !";}
-				elseif ($_GET['age'] < 115) {echo $str." Adult ! ";}
+	$strLang = '';
+	(($_GET['lang']) == "yes") ? $strLang = "<br>Hello  " : $strLang = "<br>Aloha ";
+	(($_GET['gender']) == "man") ? $str = "Mister " : $str = " Miss ";
+	if ($_GET['age'] > 12 )  {
+		if ($_GET['age'] < 18 ) {echo $strLang.$str." Teenager !";}
+				elseif ($_GET['age'] < 115) {echo $strLang.$str." Adult ! ";}
 				else {echo "Wow! Still alive ? Are you a robot, like me ? Can I hug you ?";}
-	
+		}
+	else if (($_GET['gender']) == "man")	echo $strLang." boy!"; else echo $strLang." Girl!";
 }
 ?>
