@@ -79,7 +79,7 @@ if (isset($_GET['age'], $_GET['gender'], $_GET['lang'])){
 }
 ?>
 <!-- 6. 7 The Girl Soccer team -->
-<h1>The Girl Soccer team</h1>
+<h2>The Girl Soccer team</h2>
 <form method="get" action="">
 	<label for="age">Please, type your age: </label>
 	<input type="" name="age">
@@ -100,5 +100,23 @@ if (isset($_GET['age'], $_GET['gender'], $_GET['lang'])){
 		if ($_GET['gender'] == 'woman' and ($_GET['age'] >= 21 and $_GET['age'] <= 40)) {
 			$answer = $_GET['namePers'].",welcome to the team !";}
 		echo $answer;
+	}
+?>
+<!-- Exercise 8 "School sucks!"  -->
+<h2>School notes</h2>
+<form method="get" action="">
+	<label for="note">Please, type your note: </label>
+	<input type="" name="note">
+	<input type="submit" name="submit" value="Send">
+</form>
+<?php
+	if (isset($_GET['note'])) {
+		$note = $_GET['note'];
+		if ($note <= 4) echo "This work is really bad. What a dumb kid!";
+			elseif ($note >= 5 and $note <=9) echo "This is not sufficient. More studying is required";
+			elseif ($note == 10) echo "barely enough!";
+		if ($note == 11 or $note == 12 or $note == 13 or $note == 14) echo "Not bad!";
+		if ($note == 15 or $note == 16 or $note == 17 or $note == 18) echo "Bravo, bravissimo!";
+		if ($note == 19 or $note == 20) echo "Too good to be true : confront the cheater!";
 	}
 ?>
